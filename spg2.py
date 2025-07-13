@@ -23,7 +23,7 @@ def collect_inputs():
         city, country = "", ""
 
     return {
-        "victim": victim_name,
+        "victim": victim_name if victim_name else "default_user",
         "partner": partner_name,
         "idol": idol_name,
         "dob": dob.replace("/", ""),
@@ -32,7 +32,7 @@ def collect_inputs():
         "country": country
     }
 
-def generate_passwords(data, max_count=10000):
+def generate_passwords(data, max_count=5000):
     name = data["victim"]
     partner = data["partner"]
     idol = data["idol"]
@@ -84,18 +84,18 @@ def save_to_file(passwords, victim_name):
     save = input("\n💾 Do you want to save the wordlist to file? (y/n): ").strip().lower()
     filename = f"{victim_name}_wordlist.txt"
 
-    if not os.path.exists("output"):
-        os.makedirs("output")
+    os.makedirs("output", exist_ok=True)
+    filepath = os.path.join("output", filename)
 
-    with open(f"output/{filename}", "w") as f:
+    with open(filepath, "w") as f:
         for pw in passwords:
             f.write(pw + "\n")
 
     if save == 'y':
-        print(f"\n✅ Saved as output/{filename}")
+        print(f"\n✅ Saved as {filepath}")
     else:
         print(f"\n😏 You said no, but I saved it anyway.")
-        print(f"📁 Auto-saved as output/{filename}")
+        print(f"📁 Auto-saved as {filepath}")
 
 def main():
     data = collect_inputs()
