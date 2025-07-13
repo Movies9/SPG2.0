@@ -1,30 +1,4 @@
 
-
-
-support me plz
-
-✅ Step-by-Step GitHub Upload Instructions for SPG2
-
-
----
-
-🔹 Step 1: Prepare Folder Structure Locally
-
-Create a folder called SPG2/ and put the following inside:
-
-SPG2/
-├── spg2.py          ← main script
-├── README.md        ← GitHub page text
-├── LICENSE          ← (MIT License if you want)
-└── output/          ← gets auto-created during use
-
-
----
-
-🔹 Step 2: README.md Content
-
-Here’s the full README.md with your Telegram, Discord, branding, and tool info:
-
 # 🔐 SPG2 - Smart Password Generator v2.0
 
 > Created & powered by: [anonymousWindia](https://t.me/anonymousWindia)  
